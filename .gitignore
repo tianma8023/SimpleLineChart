@@ -58,8 +58,7 @@ freeline_project_description.json
 *.iml
 .gradle
 /local.properties
-/.idea/workspace.xml
-/.idea/libraries
+/.idea/
 .DS_Store
 /build
 /captures

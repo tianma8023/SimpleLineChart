@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SimpleLineChart</string>
+    <string name="bezier_curve">贝塞尔曲线</string>
+    <string name="polyline">折线</string>
 </resources>
