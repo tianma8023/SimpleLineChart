@@ -48,22 +48,14 @@ public class SampleActivity extends AppCompatActivity {
     }
 
     private void refreshLineChart(boolean cubic) {
-        int pointsPerLine = 5;
-        int numberOfLines = 2;
-
-        float[][] pointsData = new float[][]{
-                new float[]{28, 27, 29.5f, 29, 29.2f},
-                new float[]{23.5f, 23.7f, 23.3f, 24.4f, 23.5f}
-        };
+        float[][] pointsData = generateFakeData();
 
         List<Line> lines = new ArrayList<>();
-        for (int i = 0; i < numberOfLines; i++) {
-
+        for (int i = 0; i < pointsData.length; i++) {
             List<Point> pointValues = new ArrayList<>();
-            for (int j = 0; j < pointsPerLine; j++) {
+            for (int j = 0; j < pointsData[i].length; j++) {
                 pointValues.add(new Point(j + 10, pointsData[i][j]));
             }
-
             Line line = new Line(pointValues);
             line.setLabelFormatter(new LineChartLabelFormatter() {
                 @Override
@@ -80,7 +72,6 @@ public class SampleActivity extends AppCompatActivity {
                 line.setLabelAbovePoint(false);
             }
             line.setCubic(cubic);
-
             lines.add(line);
         }
 
@@ -88,5 +79,11 @@ public class SampleActivity extends AppCompatActivity {
         mSimpleLineChart.setLineChartData(lineChartData);
     }
 
-
+    private float[][] generateFakeData() {
+        float[][] data = new float[][]{
+                new float[]{28, 27, 29.5f, 29, 29.2f},
+                new float[]{23.5f, 23.7f, 23.3f, 24.4f, 23.5f}
+        };
+        return data;
+    }
 }
