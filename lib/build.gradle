@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group 'com.github.tianma8023'
+group = 'com.github.tianma8023'
+version = '0.0.2'
 
 android {
     compileSdkVersion 26
@@ -54,4 +55,4 @@ dependencies {
 //}
 
 // apply from publish.gradle
-apply from: 'publish.gradle'
+// apply from: 'publish.gradle'
