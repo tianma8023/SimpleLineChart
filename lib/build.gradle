@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group 'com.github.tianma8023'
 
 android {
     compileSdkVersion 26
@@ -21,7 +24,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -29,23 +32,26 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-// helper for publishing library to jCenter
-apply plugin: 'com.novoda.bintray-release'
+//// helper for publishing library to jCenter
+//apply plugin: 'com.novoda.bintray-release'
+//
+//buildscript {
+//    repositories {
+//        jcenter()
+//    }
+//    dependencies {
+//        classpath 'com.novoda:bintray-release:0.8.0'
+//    }
+//}
+//
+//publish {
+//    userOrg = 'tianma'
+//    groupId = 'com.github.tianma8023'
+//    artifactId = 'simplelinechart'
+//    publishVersion = '0.1.0'
+//    desc = 'Simple line chart library inspired by HelloCharts'
+//    website = 'https://github.com/tianma8023/SimpleLineChart'
+//}
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.novoda:bintray-release:0.8.0'
-    }
-}
-
-publish {
-    userOrg = 'tianma'
-    groupId = 'com.github.tianma8023'
-    artifactId = 'simplelinechart'
-    publishVersion = '0.1.0'
-    desc = 'Simple line chart library inspired by HelloCharts'
-    website = 'https://github.com/tianma8023/SimpleLineChart'
-}
+// apply from publish.gradle
+apply from: 'publish.gradle'
