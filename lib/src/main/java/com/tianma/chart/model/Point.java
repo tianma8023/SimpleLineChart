@@ -1,7 +1,7 @@
 package com.tianma.chart.model;
 
 /**
- * Created by Tianma on 2017/5/22.
+ * 线形图表中的点
  */
 public class Point {
 

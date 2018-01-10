@@ -47,14 +47,14 @@ public class SampleActivity extends AppCompatActivity {
         refreshLineChart(true);
     }
 
-    private void refreshLineChart(boolean cubic) {
+    private void refreshLineChart(boolean isCubic) {
         float[][] pointsData = generateFakeData();
 
         List<Line> lines = new ArrayList<>();
         for (int i = 0; i < pointsData.length; i++) {
             List<Point> pointValues = new ArrayList<>();
             for (int j = 0; j < pointsData[i].length; j++) {
-                pointValues.add(new Point(j + 10, pointsData[i][j]));
+                pointValues.add(new Point(j, pointsData[i][j]));
             }
             Line line = new Line(pointValues);
             line.setLabelFormatter(new LineChartLabelFormatter() {
@@ -71,7 +71,7 @@ public class SampleActivity extends AppCompatActivity {
             } else {
                 line.setLabelAbovePoint(false);
             }
-            line.setCubic(cubic);
+            line.setCubic(isCubic);
             lines.add(line);
         }
 

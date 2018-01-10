@@ -2,10 +2,9 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -23,9 +22,30 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:26.+'
+    testImplementation 'junit:junit:4.12'
+}
+
+// helper for publishing library to jCenter
+apply plugin: 'com.novoda.bintray-release'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.8.0'
+    }
+}
+
+publish {
+    userOrg = 'tianma'
+    groupId = 'com.github.tianma8023'
+    artifactId = 'simplelinechart'
+    publishVersion = '0.1.0'
+    desc = 'Simple line chart library inspired by HelloCharts'
+    website = 'https://github.com/tianma8023/SimpleLineChart'
 }

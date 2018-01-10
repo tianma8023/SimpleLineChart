@@ -3,6 +3,9 @@ package com.tianma.chart.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Line的容器，可添加和移除Line
+ */
 public class LineChartData {
 
     private List<Line> lines = new ArrayList<>();

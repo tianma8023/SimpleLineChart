@@ -5,7 +5,10 @@ import com.tianma.chart.model.Point;
 
 import java.util.Locale;
 
-
+/**
+ * 简单的标签格式器，对于指定的Point的y值，保留1位小数并返回。
+ * @author Tianma
+ */
 public class SimpleLineChartLabelFormatter implements LineChartLabelFormatter {
 
     @Override

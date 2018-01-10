@@ -10,7 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Single line for line chart
+ * Single line for line chart.<br>
+ * 线性表中的线条
  */
 public class Line {
 
@@ -57,10 +58,19 @@ public class Line {
      */
     private boolean isLabelAbovePoint = false;
 
+    /**
+     * 线条的样式（虚线、实线之类）
+     */
     private PathEffect pathEffect;
 
+    /**
+     * 线条标签格式器
+     */
     private LineChartLabelFormatter labelFormatter = new SimpleLineChartLabelFormatter();
 
+    /**
+     * 线条上的点
+     */
     private List<Point> points;
 
     public Line() {
