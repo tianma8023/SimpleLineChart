@@ -1,6 +1,5 @@
 # SimpleLineChart
 Simple line chart inspired by [hellocharts](https://github.com/lecho/hellocharts-android)
-SimpleLineChart在[hellocharts]()
 
 ## Features
 - LineChart(cubic lines, normal lines)
