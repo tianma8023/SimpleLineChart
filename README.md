@@ -11,8 +11,8 @@ Simple line chart inspired by [hellocharts](https://github.com/lecho/hellocharts
 
 
 ## Import
-### Android Studio / Gradle
-1. To use this library you need add the jitpack.io repository to your `root build.gradle`:
+#### Android Studio / Gradle
+1. To use this library you need add the jitpack.io repository to your **root** `build.gradle`:
     ```Groovy
     allprojects {
         repositories {
@@ -21,8 +21,8 @@ Simple line chart inspired by [hellocharts](https://github.com/lecho/hellocharts
         }
     }
     ```
-    <font color='#FF4081'>**Note:** don't add the jitpack.io repository unser `buildscript` closure.</font> 
-2. Then add the SimpleLineChart dependency in your module gradle file:
+    <font color='#FF4081'>**Note:** don't add the jitpack.io repository under `buildscript` closure.</font> 
+2. Then add the SimpleLineChart dependency in your **module** `build.gradle`:
     ```Groovy
     dependencies {
         // ...
@@ -80,7 +80,7 @@ Simple line chart has its own method to set/add chart data, you can use it like 
 ```
 ## Demo / Sample
 
-There is a sample project in this repository or you can download the demo apk directly from here [demo.apk](/demo/demo.apk)
+There is a sample project in this repo or you can download the demo apk directly from here [demo.apk](/demo/demo.apk)
 
 ## License
 ```txt
