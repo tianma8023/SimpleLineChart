@@ -82,6 +82,7 @@ public class SimpleLineChart extends View {
         drawLines(canvas);
     }
 
+    // 分别计算 Chart对应的RectF 和 Point对应的RectF
     private void calculateRectF() {
         chartRectF.set(getPaddingLeft() + mHorizontalSparedSpace, getPaddingTop() + mVerticalSparedSpace, mWidth - mHorizontalSparedSpace - getPaddingRight(), mHeight - mVerticalSparedSpace - getPaddingBottom());
 
@@ -118,20 +119,34 @@ public class SimpleLineChart extends View {
         pointRectF.set(minPointX, minPointY, maxPointX, maxPointY);
     }
 
+    /**
+     * 根据平移伸缩变换，将Point的x坐标转换成rawX值
+     *
+     * @param pointX Point的x坐标
+     * @return 转换后的rawX值
+     */
     private float calculateRawX(float pointX) {
         return (pointX - pointRectF.left) * chartRectF.width() / pointRectF.width() + chartRectF.left;
     }
 
+    /**
+     * 根据平移伸缩变换，将Point的y坐标转换成rawY值
+     *
+     * @param pointY Point的y坐标
+     * @return 转换后的rawY值
+     */
     private float calculateRawY(float pointY) {
         return chartRectF.height() - (pointY - pointRectF.top) * chartRectF.height() / pointRectF.height() + chartRectF.top;
     }
 
+    // 绘制线条的Paint的前期准备操作
     private void prepareLinePaint(Line line) {
         mLinePaint.setStrokeWidth(line.getStrokeWidth());
         mLinePaint.setColor(line.getLineColor());
         mLinePaint.setPathEffect(line.getPathEffect());
     }
 
+    // 绘制标签的Paint的前期准备操作
     private void prepareLabelPaint(Line line) {
         mLabelPaint.setTextSize(line.getLabelTextSize());
         mLabelPaint.setColor(line.getLabelColor());
@@ -139,6 +154,7 @@ public class SimpleLineChart extends View {
         mLabelPaint.getFontMetricsInt(mFontMetrics);
     }
 
+    // 绘制线条
     private void drawLines(Canvas canvas) {
         for (Line line : mLineChartData.getLines()) {
             if (line.isCubic()) {
@@ -265,6 +281,7 @@ public class SimpleLineChart extends View {
         canvas.drawPath(path, mLinePaint);
     }
 
+    // 绘制标签
     private void drawLabel(Canvas canvas, Line line, Point point, float rawX, float rawY, float offset) {
         String label = line.getLabelFormatter().labelFormat(point);
         if (TextUtils.isEmpty(label)) {
