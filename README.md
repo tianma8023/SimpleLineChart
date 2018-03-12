@@ -27,9 +27,9 @@ Simple line chart inspired by [hellocharts](https://github.com/lecho/hellocharts
     dependencies {
         // ...
         // if Android Gradle Plugin after v3.0
-        implementation 'com.github.tianma8023:SimpleLineChart:0.0.2' 
+        implementation 'com.github.tianma8023:SimpleLineChart:0.0.3' 
         // if Android Gradle Plugin before v3.0
-        // compile 'com.github.tianma8023:SimpleLineChart:0.0.2' 
+        // compile 'com.github.tianma8023:SimpleLineChart:0.0.3' 
     }
     ```
 

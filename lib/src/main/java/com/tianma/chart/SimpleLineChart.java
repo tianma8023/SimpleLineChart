@@ -39,6 +39,9 @@ public class SimpleLineChart extends View {
 
     private Paint.FontMetricsInt mFontMetrics = new Paint.FontMetricsInt();
 
+    private static final int MIN_CONTENT_WIDTH_PX = 600;
+    private static final int MIN_CONTENT_HEIGHT_PX = 400;
+
     public SimpleLineChart(Context context) {
         super(context);
         init();
@@ -70,9 +73,21 @@ public class SimpleLineChart extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        mWidth = MeasureSpec.getSize(widthMeasureSpec);
-        mHeight = MeasureSpec.getSize(heightMeasureSpec);
+        // 处理 wrap_content 情况
+        int widthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSpecSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
+        int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
+        if (widthSpecMode == MeasureSpec.AT_MOST) {
+            widthSpecSize = MIN_CONTENT_WIDTH_PX;
+        }
+        if (heightSpecMode == MeasureSpec.AT_MOST) {
+            heightSpecSize = MIN_CONTENT_HEIGHT_PX;
+        }
+        mWidth = widthSpecSize;
+        mHeight = heightSpecSize;
+
+        setMeasuredDimension(widthSpecSize, heightSpecSize);
     }
 
     @Override
