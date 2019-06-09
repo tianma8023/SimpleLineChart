@@ -5,9 +5,8 @@ Simple line chart inspired by [hellocharts](https://github.com/lecho/hellocharts
 - LineChart(cubic lines, normal lines)
 
 ## Screenshots
-![Line Chart](/ss/ss_linechart.jpeg)
-
-![Cubic Line Chart](/ss/ss_linechart_cubic.jpeg)
+<img src="/ss/ss_linechart.jpeg" height="180"/>
+<img src="/ss/ss_linechart_cubic.jpeg" height="180"/>
 
 
 ## Import
@@ -26,10 +25,7 @@ Simple line chart inspired by [hellocharts](https://github.com/lecho/hellocharts
     ```Groovy
     dependencies {
         // ...
-        // if Android Gradle Plugin after v3.0
-        implementation 'com.github.tianma8023:SimpleLineChart:0.0.3' 
-        // if Android Gradle Plugin before v3.0
-        // compile 'com.github.tianma8023:SimpleLineChart:0.0.3' 
+        implementation 'com.github.tianma8023:SimpleLineChart:0.0.4' 
     }
     ```
 

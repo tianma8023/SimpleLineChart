@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -47,12 +46,12 @@ public class SimpleLineChart extends View {
         init();
     }
 
-    public SimpleLineChart(Context context, @Nullable AttributeSet attrs) {
+    public SimpleLineChart(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public SimpleLineChart(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SimpleLineChart(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
